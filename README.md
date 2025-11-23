@@ -74,8 +74,11 @@ interactive_wellcare_agent (Orchestrator)
 
 #### Option 1: ADK Web Interface (Recommended)
 ```bash
-# Start the ADK web interface
-adk web
+# Start the ADK web interface on port 8000
+adk web agents
+
+# Or start on a different port (e.g., 8001)
+adk web agents --port 8001
 ```
 
 #### Option 2: Flask Web Interface
@@ -89,9 +92,6 @@ python app.py
 # Run in terminal mode
 python wellcare_agent_simple.py
 ```
-
-#### Option 4: Windows Batch File
-Double-click `START_WEB.bat` to choose your preferred interface.
 
 ## 🛠️ Tools & Capabilities
 
@@ -120,52 +120,32 @@ Double-click `START_WEB.bat` to choose your preferred interface.
 
 ```
 agent-wellcare/
-├── agent.py                    # Official ADK agent implementation
-├── wellcare_agent.py           # Original multi-agent version
-├── wellcare_agent_simple.py    # Terminal-based version
+├── agents/                     # ADK agent directory
+│   └── wellcare/               # WellCare agent
+│       └── agent.py            # Main ADK agent implementation
+├── agent.py                    # Main ADK agent implementation
 ├── app.py                      # Flask web interface
+├── wellcare_agent_simple.py    # Terminal-based version
+├── start_adk.py                # ADK startup script
 ├── START_WEB.bat               # Windows batch launcher
 ├── requirements.txt            # Python dependencies
-├── test_adk.py                 # ADK implementation tests
-├── demo_adk.py                 # ADK demo
-├── test_agent.py               # Component tests
-├── example_usage.py            # Usage examples
 ├── templates/
 │   └── index.html              # Web interface template
 ├── .env.example                # Environment variables template
+├── .gitignore                  # Git ignore file
 ├── README.md                   # This file
-├── SETUP.md                    # Installation guide
-├── RUN_ADK.md                  # ADK usage guide
-└── QUICKSTART.md               # Quick start guide
+└── LICENSE                     # MIT License
 ```
 
 ## 🔧 Development
 
-### Testing
+The project includes development tools for testing and extending the agent functionality.
 
-Run component tests:
-```bash
-python test_agent.py
-```
-
-Test ADK implementation:
-```bash
-python test_adk.py
-```
-
-### Example Usage
-
-See example interactions:
-```bash
-python example_usage.py
-```
+Refer to the ADK documentation for implementation details and testing procedures.
 
 ## 📚 Documentation
 
-- [SETUP.md](SETUP.md): Complete installation guide
-- [RUN_ADK.md](RUN_ADK.md): ADK-specific instructions
-- [QUICKSTART.md](QUICKSTART.md): Fast track guide
-- [FINAL_SETUP_GUIDE.md](FINAL_SETUP_GUIDE.md): Final configuration steps
+Refer to the official Google ADK documentation for detailed setup and usage instructions.
 
 ## ⚠️ Important Disclaimers
 
